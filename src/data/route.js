@@ -33,6 +33,6 @@ export const PRODUCTS = [
   { id: 'semmeln', name: 'Sonntagssemmeln', unit: 'Stück' },
   { id: 'vollkorn', name: 'Vollkornbrot', unit: 'Laib' },
   { id: 'mohnstriezel', name: 'Mohnstriezel', unit: 'Stück' },
-  { id: 'kuchen', name: 'Apfelkuchen (Stück)', unit: 'Stück' },
+  { id: 'kuchen', name: 'Apfelkuchen', unit: 'Stück' },
   { id: 'kaese', name: 'Bauernkäse', unit: '250g-Stück' },
 ];
