@@ -1,20 +1,20 @@
-// Fest hinterlegte, frei erfundene Routen-Koordinaten (kleine Ortschaft) für die Simulation.
+// Fest hinterlegte, frei erfundene Routen-Koordinaten (Graz) für die Simulation.
 // Kein echtes GPS – dient nur der Klick-Prototyp-Demo.
 export const ROUTE = [
-  [47.8005, 13.0450],
-  [47.8010, 13.0465],
-  [47.8016, 13.0480],
-  [47.8022, 13.0495],
-  [47.8027, 13.0512],
-  [47.8033, 13.0528],
-  [47.8038, 13.0545],
-  [47.8042, 13.0562],
-  [47.8045, 13.0580],
-  [47.8049, 13.0598],
-  [47.8054, 13.0614],
-  [47.8060, 13.0630],
-  [47.8067, 13.0644],
-  [47.8075, 13.0655], // Zielpunkt: Kundenstraße
+  [47.0650, 15.4250],
+  [47.0655, 15.4265],
+  [47.0661, 15.4280],
+  [47.0667, 15.4295],
+  [47.0672, 15.4312],
+  [47.0678, 15.4328],
+  [47.0683, 15.4345],
+  [47.0687, 15.4362],
+  [47.0690, 15.4380],
+  [47.0694, 15.4398],
+  [47.0699, 15.4414],
+  [47.0705, 15.4430],
+  [47.0712, 15.4444],
+  [47.0720, 15.4455], // Zielpunkt: Kundenstraße
 ];
 
 // Ab diesem Routenindex wird die "Händler kommt in ca. X Minuten"-Benachrichtigung ausgelöst.
