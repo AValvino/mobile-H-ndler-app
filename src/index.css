@@ -1,0 +1,41 @@
+:root {
+  --bread-crust: #a8562f;
+  --bread-crust-dark: #7a3d1f;
+  --bread-warm: #c1440e;
+  --bread-cream: #fff8f0;
+  --bread-tan: #f2e2c9;
+  --text: #3d2b1f;
+  --text-muted: #7a6a5a;
+  --success: #4c7a3d;
+  --warning: #b8862b;
+  --danger: #b6412a;
+  --border: #e6d3b3;
+  --shadow: 0 4px 14px rgba(122, 61, 31, 0.12);
+
+  font: 16px/1.5 system-ui, 'Segoe UI', Roboto, sans-serif;
+  color: var(--text);
+  background: var(--bread-cream);
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+  margin: 0 0 8px;
+  color: var(--bread-crust-dark);
+}
+
+p {
+  margin: 0;
+}
+
+button {
+  font: inherit;
+}
