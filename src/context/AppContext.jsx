@@ -11,6 +11,7 @@ const initialState = {
   orders: [],
   notifications: [],
   disruption: null,
+  ratings: [],
 };
 
 let idCounter = 1;
@@ -87,8 +88,31 @@ function reducer(state, action) {
             unit: action.unit,
             binding: action.binding,
             createdAt: new Date(),
+            pickedUp: false,
           },
           ...state.orders,
+        ],
+      };
+    case 'MARK_PICKED_UP':
+      return {
+        ...state,
+        orders: state.orders.map((o) =>
+          o.id === action.orderId ? { ...o, pickedUp: true } : o
+        ),
+      };
+    case 'ADD_RATING':
+      return {
+        ...state,
+        ratings: [
+          {
+            id: nextId(),
+            orderId: action.orderId,
+            productName: action.productName,
+            stars: action.stars,
+            comment: action.comment,
+            createdAt: new Date(),
+          },
+          ...state.ratings,
         ],
       };
     case 'SET_DISRUPTION':
@@ -117,16 +141,22 @@ export function AppProvider({ children }) {
   }, [state.isTourRunning, state.hasArrived]);
 
   const etaMinutes = Math.max(0, Math.round((ARRIVAL_INDEX - state.positionIndex) * MINUTES_PER_STEP));
+  const averageRating = state.ratings.length
+    ? state.ratings.reduce((sum, r) => sum + r.stars, 0) / state.ratings.length
+    : 0;
 
   const value = {
     ...state,
     etaMinutes,
+    averageRating,
     startTour: () => dispatch({ type: 'START_TOUR' }),
     resetTour: () => dispatch({ type: 'RESET_TOUR' }),
     dismissNotification: (id) => dispatch({ type: 'DISMISS_NOTIFICATION', id }),
     addOrder: (order) => dispatch({ type: 'ADD_ORDER', ...order }),
     setDisruption: (text) => dispatch({ type: 'SET_DISRUPTION', text }),
     clearDisruption: () => dispatch({ type: 'CLEAR_DISRUPTION' }),
+    markPickedUp: (orderId) => dispatch({ type: 'MARK_PICKED_UP', orderId }),
+    addRating: (rating) => dispatch({ type: 'ADD_RATING', ...rating }),
   };
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;

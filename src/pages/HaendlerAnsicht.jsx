@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useApp } from '../context/AppContext';
 import OrderList from '../components/OrderList';
+import RatingsPanel from '../components/RatingsPanel';
 import { ARRIVAL_INDEX } from '../data/route';
 
 const PRESET_MESSAGES = [
@@ -67,6 +68,8 @@ export default function HaendlerAnsicht() {
       </section>
 
       <OrderList title="Eingegangene Vorbestellungen & Interessen" />
+
+      <RatingsPanel title="Aktuelle Bewertungen" limit={3} />
 
       <section className="disruption-card">
         <h3>Ausfall- / Verspätungsmeldung</h3>

@@ -2,6 +2,7 @@ import MapView from '../components/MapView';
 import ToastStack from '../components/ToastStack';
 import PreorderForm from '../components/PreorderForm';
 import OrderList from '../components/OrderList';
+import RatingsPanel from '../components/RatingsPanel';
 import { useApp } from '../context/AppContext';
 import { ARRIVAL_INDEX } from '../data/route';
 
@@ -36,8 +37,10 @@ export default function KundenApp() {
 
       <div className="page__grid">
         <PreorderForm />
-        <OrderList />
+        <OrderList showPickupActions />
       </div>
+
+      <RatingsPanel title="Bewertungen" />
     </div>
   );
 }
